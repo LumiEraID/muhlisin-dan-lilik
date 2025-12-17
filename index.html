@@ -686,7 +686,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Copy rekening dengan notif
-function copyRek(no){
+window.copyRek = function(no){
     navigator.clipboard.writeText(no).then(() => {
         const notif = document.getElementById('copyNotif');
         notif.style.display = 'block';
