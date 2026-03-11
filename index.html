@@ -108,15 +108,15 @@ body {
 
 /* MEMPELAI */
 .mempelai-section {
-    background-image: url('bg5.png');
+    background-image: transparent;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh; /* tinggi bg */
     padding: 0;
     margin: 0;
-    overflow: hidden;
+    overflow: visible; /*tinggi bg */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -132,6 +132,19 @@ body {
 .mempelai-section p{ font-size: 14px; max-width: 350px; }
 .nama-mempelai { font-size: 32px; font-family: 'Great Vibes'; margin: 20px 0 10px; }
 .btn-ig, .btn-lokasi { background: #733a30; color: white; padding: 8px 18px; border-radius: 20px; display: inline-block; margin-top: 15px; font-size: 15px; text-decoration: none; }
+
+
+.mempelai-border {
+    border: 4px solid #733a30;
+    padding: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.7); /* transparan halus */
+    backdrop-filter: none;/* blur */
+    width: 85%;
+    max-width: 420px;
+}
 
 /* ================= AKAD & RESEPSI ================= */
 .acara-wrapper { background-color: #733a30; padding: 50px 0; }
@@ -165,7 +178,7 @@ body {
 
 /* LIVE STREAMING */
 .streaming-section { width: 100%; padding: 40px 25px; background-image: transparent; background-size: cover; background-position: center; text-align: center; color: #733a30; }
-.streaming-box { width: 90%; margin: auto; background: rgba(255,255,255,0.85); border-radius: 25px; padding: 20px 25px; border: 4px solid #fff; box-shadow: 0px 6px 20px rgba(0,0,0,0.7); backdrop-filter: blur(3px); background-image: url(''); background-size: cover; background-position: center; }
+.streaming-box { width: 85%; margin: auto; background: rgba(255,255,255,0.85); border-radius: 25px; padding: 20px 25px; border: 4px solid #fff; box-shadow: 0px 6px 20px rgba(0,0,0,0.7); backdrop-filter: blur(3px); background-image: url(''); background-size: cover; background-position: center; }
 .streaming-title { font-size: 25px; font-weight: 400; margin-bottom: 10px; color: #733a30; }
 .streaming-text { font-size: 14px; line-height: 1.8; margin-bottom: 10px; color: #733a30; }
 .streaming-btn { background: #733a30; color: white; padding: 10px 25px; border-radius: 25px; text-decoration: none; font-size: 15px; display: inline-flex; align-items: center; gap: 8px; }
@@ -208,7 +221,7 @@ body, html { max-width: 100%; overflow-x: hidden; }
 /* BOX RSVP */
 .container {
   background: rgba(255, 255, 255, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 4px solid rgba(255, 255, 255, 0.6);
   border-radius: 20px;
   backdrop-filter: none;
 
@@ -424,11 +437,14 @@ body, html { max-width: 100%; overflow-x: hidden; }
 
     <!-- DOA -->
     <div class="doa-bg">
-        <p>Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan untukmu dari (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya. Dia menjadikan di antaramu rasa cinta dan kasih sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.</p>
+        <p>Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan untukmu dari (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya. Dia menjadikan di antaramu rasa cinta dan kasih sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.
+        </p>
+        <h3>Qs. Ar-Rum(30): 21</h3>
     </div>
 
     <!-- MEMPELAI -->
     <div class="mempelai-section">
+      <div class="mempelai-border">
         <div class="judul-mempelai"><br>Bride & Groom</div>
         <p>Assalamu'alaikum Wr. Wb.<br>
         Maha Suci Allah yang telah menciptakan makhluk-Nya berpasang-pasangan. Ya Allah semoga ridho-Mu tercurah mengiringi pernikahan kami:</p>
@@ -441,6 +457,7 @@ body, html { max-width: 100%; overflow-x: hidden; }
         <h1>Deron Smith, S.Kom</h1>
         <p>Putra keempat dari<br>Bapak Sam Smith dan Ibu Velery</p>
         <a href="https://instagram.com/username" target="_blank" class="btn-lokasi"><i class="fab fa-instagram"></i> Instagram</a>
+    </div>
     </div>
 
     <!-- AKAD & RESEPSI -->
@@ -484,26 +501,28 @@ body, html { max-width: 100%; overflow-x: hidden; }
     </div>
 
     <!-- LIVE STREAMING -->
-    <div class="streaming-section">
+    <!--<div class="streaming-section">
         <div class="streaming-box">
             <div class="streaming-title">Live Streaming</div>
             <p class="streaming-text">Temui kami secara virtual untuk menyaksikan acara pernikahan kami melalui tautan di bawah ini:</p>
             <a href="https://instagram.com/levonka" target="_blank" class="streaming-btn"><i class="fab fa-instagram"></i> @levonka</a>
         </div>
-        <br><br>
+        -->
+        <br><br> 
+
 
         <div class="streaming-box">
         <div class="story-title">Love Story</div>
-        <div class="story-subtitle">Awal Bertemu</div>
-        <p class="story-text">Awal mengenal dimulai sejak duduk dibangku SMA namun saat itu kami tidak saling akrab. Pada tahun 2019 kami mulai dekat dan saling mengenal satu sama lain.</p>
+        <div class="story-subtitle">Perkenalan</div>
+        <p class="story-text">Awal perkenalan kami terjadi melalui seorang teman yang memperkenalkan kami satu sama lain. Dari perkenalan sederhana itu, kami mulai saling mengenal dan semakin dekat seiring berjalannya waktu. Pada tanggal 1 Februari 2026, ia datang ke rumah untuk pertama kalinya untuk berkenalan dengan kedua orang tua saya. Beberapa hari kemudian, tepatnya pada 10 Februari 2026, saya pun diperkenalkan kepada kedua orang tuanya. Dari momen tersebut, hubungan kami semakin mendapat restu dan dukungan dari orang tua.</p>
 
         <div class="story-subtitle">Lamaran</div>
-        <p class="story-text">Setelah 4 tahun mengenal dekat kami berdua meyakini mampu melangkah ke jenjang yang lebih serius. Pada 18 November 2023 kami pun resmi bertunangan dengan restu dari kedua orangtua dan keluarga besar.</p>
+        <p class="story-text">Setelah kami saling mengenal lebih dekat dan mendapatkan restu dari kedua orang tua, kami memutuskan untuk melangkah ke tahap yang lebih serius. Tanpa adanya tanggal jadian yang khusus, dengan kesepakatan dan doa dari keluarga, kami melangsungkan lamaran sekaligus pertunangan pada tanggal 17 Februari 2026 sebagai tanda keseriusan untuk membangun masa depan bersama.</p>
 
         <div class="story-subtitle">Pernikahan</div>
-        <p class="story-text">Setelah 4 tahun mengenal dekat kami berdua meyakini mampu melangkah ke jenjang yang lebih serius. Pada 18 November 2023 kami pun resmi bertunangan dengan restu dari kedua orangtua dan keluarga besar.</p>
+        <p class="story-text">Setelah prosesi lamaran yang penuh makna, kami memutuskan untuk melangkah ke jenjang yang lebih sakral, yaitu pernikahan. Dengan penuh harapan dan doa, InsyaAllah kami akan melangsungkan pernikahan pada 6 Juni 2026, sebagai awal perjalanan baru kami dalam membangun rumah tangga yang penuh cinta, kebahagiaan, dan keberkahan.</p>
     </div></div>
-
+<br><br>
     <!-- WEDDING GIFT -->
     <div class="wg-section">
         <div class="wg-oval">
@@ -649,12 +668,15 @@ if(to){ document.getElementById('guestName').textContent = to; }
 
 // Preload L.png agar langsung muncul, tidak loading
 const preloadL1 = new Image();
-preloadL1.src = 'Cover.png'; 
+preloadL1.fetchPriority = "high";
+preloadL1.src = "Cover.png";
 
 const preloadL2 = new Image();
-preloadL2.src = 'bg1.png';
+preloadL2.fetchPriority = "high";
+preloadL2.src = "bg1.png";
 
 const preloadL3 = new Image();
+preloadL3.fetchPriority = "high";
 preloadL3.src = 'bg5.png';
 
 
