@@ -22,6 +22,18 @@ body {
     font-family:'Lora', serif;
     color:#733a30;
     overflow:hidden;
+    background:linear-gradient(135de,#f3f3f
+    ,#e8e8e8);
+}
+
+html{
+display:flex;
+justify-content:center;
+}
+
+body{
+max-width:430px;
+width:100%;
 }
 
 #bg-fixed{
@@ -411,6 +423,36 @@ body, html { max-width: 100%; overflow-x: hidden; }
 /*animasi agar tidak lag*/
 .section{
     will-change: transform, opacity;
+}
+
+/* =============================== */
+/* LAYOUT HP DI TENGAH SAAT DI PC  */
+/* =============================== */
+
+body{
+display:flex;
+justify-content:center;
+background:#f5f5f5; /* warna background luar */
+}
+
+/* semua isi website */
+#cover,
+#content,
+#bg-fixed{
+max-width:430px; /* ukuran standar HP */
+width:100%;
+left:auto;
+right:auto;
+}
+
+/* supaya background tetap mengikuti */
+#bg-fixed{
+margin:auto;
+}
+
+/* cover tetap tengah */
+#cover{
+margin:auto;
 }
 
 </style>
