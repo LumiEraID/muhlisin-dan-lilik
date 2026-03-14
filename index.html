@@ -25,12 +25,21 @@ body {
 }
 
 #bg-fixed{
-  position:fixed;
-  inset:0;
-  background-image:url('Cover.png');
-  background-size:cover;
-  background-position:center;
-  z-index:-1;
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background-image: url('Cover.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  z-index: -999;
+  pointer-events: none;
+
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 /* ================= COVER ================= */
