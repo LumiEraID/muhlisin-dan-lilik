@@ -18,43 +18,42 @@
 
 <style>
 body {
-    margin: 0;
-    font-family: 'Lora', serif;
-    color: #733a30;
-    overflow-x: hidden;
-    
+    margin:0;
+    font-family:'Lora', serif;
+    color:#733a30;
+    overflow:hidden;
 }
 
-#bg-fixed {
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-
-  background-image: url('Cover.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  z-index: -999;
-  pointer-events: none;
-
-  transform: translateZ(0);
-  will-change: transform;
+#bg-fixed{
+  position:fixed;
+  inset:0;
+  background-image:url('Cover.png');
+  background-size:cover;
+  background-position:center;
+  z-index:-1;
 }
 
 /* ================= COVER ================= */
-#cover {
-    height: 100vh;
-    background-image: url('Cover.png');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #733a30;
+#cover{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100vh;
+
+    background-image:url('Cover.png');
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    color:#733a30;
+    z-index:9999;
+
+    transition:opacity 0.6s ease;
 }
 
 .zoom {
@@ -90,6 +89,18 @@ body {
 .slide-up.show {
     opacity: 1;
     transform: translateY(0);
+}
+
+/*===== ANIMASI =======*/
+.animate-text{
+opacity:0;
+transform:translateY(40px);
+transition:all 0.8s ease;
+}
+
+.animate-text.show{
+opacity:1;
+transform:translateY(0);
 }
 
 /* ========== ISI UNDANGAN ============ */
@@ -132,7 +143,6 @@ body {
 .mempelai-section p{ font-size: 14px; max-width: 350px; }
 .nama-mempelai { font-size: 32px; font-family: 'Great Vibes'; margin: 20px 0 10px; }
 .btn-ig, .btn-lokasi { background: #733a30; color: white; padding: 8px 18px; border-radius: 20px; display: inline-block; margin-top: 15px; font-size: 15px; text-decoration: none; }
-
 
 .mempelai-border {
     border: 4px solid #733a30;
@@ -221,7 +231,7 @@ body, html { max-width: 100%; overflow-x: hidden; }
 /* BOX RSVP */
 .container {
   background: rgba(255, 255, 255, 0.35);
-  border: 4px solid rgba(255, 255, 255, 0.6);
+  border: 3px solid rgba(255, 255, 255, 0.6);
   border-radius: 20px;
   backdrop-filter: none;
 
@@ -249,7 +259,7 @@ body, html { max-width: 100%; overflow-x: hidden; }
 /* JUDUL */
 .rsvp-wrapper h1 {
   font-family: 'Great Vibes', cursive;
-  font-size: 2.2em;
+  font-size: 25px;
   margin-bottom: 12px;
   color: #733a30;
 }
@@ -321,7 +331,7 @@ body, html { max-width: 100%; overflow-x: hidden; }
   color: #000;
 }
 
-/* ================= THANK YOU SECTION ================= */
+/* ======= THANK YOU SECTION ========= */
 .thanks-section {
     width: 100%;
     height: 100vh;
@@ -358,7 +368,6 @@ body, html { max-width: 100%; overflow-x: hidden; }
     text-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-
 /* FOOTER */
 .footer-section {
     background: #733a30; /* ubah sesuai selera */
@@ -390,6 +399,10 @@ body, html { max-width: 100%; overflow-x: hidden; }
     opacity: 0.7;
 }
 
+/*animasi agar tidak lag*/
+.section{
+    will-change: transform, opacity;
+}
 
 </style>
 <meta property="og:title" content="The Wedding of Deron & Levonka" />
@@ -408,7 +421,7 @@ body, html { max-width: 100%; overflow-x: hidden; }
 <body>
     <!-- ======= BG PALING BELAKANG === -->
 <div id="bg-fixed"></div>
-<!-- ================= COVER ================= -->
+<!-- ========== COVER ========== -->
 <div id="cover">
     <div class="zoom wedding-text">The Wedding of</div>
     <div class="zoom name-text" style="animation-delay:0.3s">Deron</div>
@@ -421,9 +434,7 @@ body, html { max-width: 100%; overflow-x: hidden; }
     <a class="button zoom" style="animation-delay:1.8s" id="openBtn">Buka Undangan</a>
 </div>
 
-<!-- ================= ISI UNDANGAN ================= -->
-
-
+<!-- ======== ISI UNDANGAN ============ -->
   
   <!-- ======= BG 1 === -->
 <div id="content">
@@ -521,7 +532,7 @@ body, html { max-width: 100%; overflow-x: hidden; }
 
         <div class="story-subtitle">Pernikahan</div>
         <p class="story-text">Setelah prosesi lamaran yang penuh makna, kami memutuskan untuk melangkah ke jenjang yang lebih sakral, yaitu pernikahan. Dengan penuh harapan dan doa, InsyaAllah kami akan melangsungkan pernikahan pada 6 Juni 2026, sebagai awal perjalanan baru kami dalam membangun rumah tangga yang penuh cinta, kebahagiaan, dan keberkahan.</p>
-    </div></div>
+    </div>
 <br><br>
     <!-- WEDDING GIFT -->
     <div class="wg-section">
@@ -551,7 +562,8 @@ body, html { max-width: 100%; overflow-x: hidden; }
             <p>Nama penerima : Levonka <br>Nomor Hp : 0804765897 <br>Jalan Melati 04 RT.07 Bandung</p>
         </div>
   </div>
-       <!-- RSVP SECTION -->
+  
+   <!-- RSVP SECTION -->
    <section id="rsvp">
    <div class="rsvp-wrapper">
     <div class="container">
@@ -559,19 +571,25 @@ body, html { max-width: 100%; overflow-x: hidden; }
     <p>Konfirmasi Kehadiran & Ucapan Selamat</p>
 
     <form id="rsvpForm">
-      <input type="text" id="name" placeholder="Nama" required>
-      <select id="attend" required>
-        <option value="">Konfirmasi Kehadiran</option>
-        <option value="Hadir">Hadir</option>
-        <option value="Tidak Hadir">Tidak Hadir</option>
-      </select>
-      <textarea id="msg" rows="3" placeholder="Ucapan..." required></textarea>
-      <button type="submit">Kirim</button>
-    </form>
+
+<input type="text" id="name" name="name" placeholder="Nama" required>
+
+<select id="attend" name="attend" required>
+<option value="">Konfirmasi Kehadiran</option>
+<option value="Hadir">Hadir</option>
+<option value="Tidak Hadir">Tidak Hadir</option>
+</select>
+
+<textarea id="msg" name="msg" rows="3" placeholder="Ucapan..." required></textarea>
+
+<button type="submit">Kirim</button>
+</form>
+
     <div class="comments" id="comments"></div>
   </div>
   </section>
-                    <!-- THANK YOU SECTION -->
+  
+ <!-- THANK YOU SECTION -->
 <div class="thanks-section">
     <div class="thanks-text">
         <p>Merupakan suatu kehormatan<br> dan kebahagiaan bagi kami
@@ -579,8 +597,6 @@ body, html { max-width: 100%; overflow-x: hidden; }
         <h1>Deron & Levonka</h1>
     </div>
 </div>
-
-
 
             <!-- FOOTER -->
             <footer class="footer-section">
@@ -609,127 +625,179 @@ body, html { max-width: 100%; overflow-x: hidden; }
          </audio>
 </div>
 
-
     <!-- Firebase SDK -->
   <script type="module">
-    // Import Firebase SDK
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-    import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
-
-    // Firebase config kamu
-    const firebaseConfig = {
-      apiKey: "AIzaSyAky1UbCVhHuE47dlyj2RS5vLmA2iF4eDI",
-      authDomain: "rsvp-1b729.firebaseapp.com",
-      databaseURL: "https://rsvp-1b729-default-rtdb.firebaseio.com",
-      projectId: "rsvp-1b729",
-      storageBucket: "rsvp-1b729.firebasestorage.app",
-      messagingSenderId: "937964030931",
-      appId: "1:937964030931:web:aa3e22424cf38de146fd26",
-      measurementId: "G-RZDX14WLNZ"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const db = getDatabase(app);
-
-    // Simpan ke Firebase
-    const form = document.getElementById("rsvpForm");
-    const commentsDiv = document.getElementById("comments");
-    const rsvpRef = ref(db, "rsvp1");// HARUS DIGANTI DENGAN RSVP BARU
     
-    form.addEventListener("submit", e => {
-      e.preventDefault();
-      const data = {
-        name: form.name.value,
-        attend: form.attend.value,
-        msg: form.msg.value
-      };
-      push(rsvpRef, data);
-      form.reset();
-    });
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
-    // Tampilkan komentar publik
-    onValue(rsvpRef, (snapshot) => {
-      commentsDiv.innerHTML = "";
-      snapshot.forEach((child) => {
-        const val = child.val();
-        const div = document.createElement("div");
-        div.className = "comment";
-        div.innerHTML = `<strong>${val.name}</strong><small>${val.attend}</small><p>${val.msg}</p>`;
-        commentsDiv.prepend(div);
-      });
-    });
-    
-// Nama tamu
-const urlParams = new URLSearchParams(window.location.search);
-const to = urlParams.get('to');
-if(to){ document.getElementById('guestName').textContent = to; }
-
-
-
-// Preload L.png agar langsung muncul, tidak loading
-const preloadL1 = new Image();
-preloadL1.fetchPriority = "high";
-preloadL1.src = "Cover.png";
-
-const preloadL2 = new Image();
-preloadL2.fetchPriority = "high";
-preloadL2.src = "bg1.png";
-
-const preloadL3 = new Image();
-preloadL3.fetchPriority = "high";
-preloadL3.src = 'bg5.png';
-
-
-// Tombol buka undangan
-document.getElementById('openBtn').onclick = function(){
-    document.getElementById('cover').style.display = 'none';
-    document.getElementById('content').style.display = 'block';
-    document.body.style.overflow = 'auto';
-    document.getElementById('bgMusic').play().catch(()=>{});
+const firebaseConfig = {
+apiKey: "AIzaSyAky1UbCVhHuE47dlyj2RS5vLmA2iF4eDI",
+authDomain: "rsvp-1b729.firebaseapp.com",
+databaseURL: "https://rsvp-1b729-default-rtdb.firebaseio.com",
+projectId: "rsvp-1b729",
+storageBucket: "rsvp-1b729.firebasestorage.app",
+messagingSenderId: "937964030931",
+appId: "1:937964030931:web:aa3e22424cf38de146fd26"
 };
 
-// Countdown
-const targetDate = new Date("2026-02-02T00:00:00").getTime();
-setInterval(() => {
-  const now = new Date().getTime();
-  const diff = targetDate - now;
-  document.getElementById("days").innerText = Math.floor(diff / (1000*60*60*24));
-  document.getElementById("hours").innerText = Math.floor((diff / (1000*60*60)) % 24);
-  document.getElementById("minutes").innerText = Math.floor((diff / (1000*60)) % 60);
-  document.getElementById("seconds").innerText = Math.floor((diff / 1000) % 60);
-}, 1000);
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
 
-// Scroll Animasi
-document.addEventListener('DOMContentLoaded', () => {
-    const selectors = ['#content .section', '#content .mempelai-section', '#content .acara-wrapper', '#content .doa-bg', '#content .acara-box', '#content .bg1-section', '.wg-section', '.wg-oval', '.wg-inner-oval', '.mempelai-border', '.streaming-section', '.streaming-box', '.story-subtitle', '.story-text', '.story-title', '.rsvp-title', '.rsvp-section', '.rsvp-box', '.rsvp-oval', '.rsvp-text', '.thanks-section', '.thanks-text'];
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            const children = Array.from(entry.target.children);
-            if(entry.isIntersecting){
-                children.forEach((child,index)=>{setTimeout(()=>child.classList.add('show'), index*200)});
-            }else{ children.forEach(child=>child.classList.remove('show')); }
-        });
-    }, { threshold:0.1 });
-    document.querySelectorAll(selectors.join(',')).forEach(el => {
-        if(!el.children.length){
-            const wrap = document.createElement('span');
-            wrap.textContent = el.textContent;
-            el.textContent = '';
-            el.appendChild(wrap);
-        }
-        Array.from(el.children).forEach(child=>child.classList.add('slide-up'));
-        observer.observe(el);
-    });
+const form = document.getElementById("rsvpForm");
+const commentsDiv = document.getElementById("comments");
+const rsvpRef = ref(db, "rsvp1");
+
+form.addEventListener("submit", e => {
+e.preventDefault();
+
+const data = {
+name: document.getElementById("name").value,
+attend: document.getElementById("attend").value,
+msg: document.getElementById("msg").value
+};
+
+push(rsvpRef, data);
+form.reset();
 });
 
-// Copy rekening dengan notif
-window.copyRek = function(no){
-    navigator.clipboard.writeText(no).then(() => {
-        const notif = document.getElementById('copyNotif');
-        notif.style.display = 'block';
-        setTimeout(() => { notif.style.display = 'none'; }, 1500);
-    });
+onValue(rsvpRef, (snapshot) => {
+commentsDiv.innerHTML = "";
+
+snapshot.forEach((child) => {
+
+const val = child.val();
+
+const div = document.createElement("div");
+div.className = "comment";
+
+div.innerHTML = `
+<strong>${val.name}</strong>
+<small>${val.attend}</small>
+<p>${val.msg}</p>
+`;
+
+commentsDiv.prepend(div);
+
+});
+});
+
+// ===================
+// NAMA TAMU
+// ===================
+const urlParams = new URLSearchParams(window.location.search);
+const to = urlParams.get('to');
+
+if(to){
+document.getElementById('guestName').textContent = to;
 }
+
+// TOMBOL BUKA UNDANGAN
+function bukaUndangan(){
+
+const cover = document.getElementById("cover");
+const content = document.getElementById("content");
+const music = document.getElementById("bgMusic");
+
+cover.style.opacity = "0";
+
+setTimeout(()=>{
+
+cover.style.display = "none";
+content.style.display = "block";
+
+document.body.style.overflow = "auto";
+
+setTimeout(()=>{
+window.scrollTo(0,0);
+},50);
+
+startAnimation();
+
+music.play().catch(()=>{});
+
+},600);
+
+}
+
+document.addEventListener("DOMContentLoaded", ()=>{
+
+document.getElementById("openBtn").addEventListener("click", bukaUndangan);
+
+});
+
+// ==========COUNTDOWN ========= //
+const targetDate = new Date("2026-02-02T00:00:00").getTime();
+
+setInterval(()=>{
+
+const now = new Date().getTime();
+const diff = targetDate - now;
+
+document.getElementById("days").innerText = Math.floor(diff/(1000*60*60*24));
+document.getElementById("hours").innerText = Math.floor((diff/(1000*60*60))%24);
+document.getElementById("minutes").innerText = Math.floor((diff/(1000*60))%60);
+document.getElementById("seconds").innerText = Math.floor((diff/1000)%60);
+
+},1000);
+
+
+// ===================
+// SCROLL ANIMATION
+// ===================
+function startAnimation(){
+
+const elements = document.querySelectorAll(
+".bg1-text, .doa-bg p, .doa-bg h3, .judul-mempelai, .nama-mempelai, .mempelai-section h1, .mempelai-section p, .btn-lokasi, .btn-ig, .acara-wrapper h1, .acara-wrapper p, .acara-title, .acara-tgl, .story-title, .story-subtitle, .story-text, .wg-title-inside, .wg-text, .wg-inner-oval, .rsvp-wrapper, .rsvp-wrapper h1, .thanks-text h1, .thanks-text p, .thanks-text h3, .thanks-text p"
+);
+
+const observer = new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}else{
+
+entry.target.classList.remove("show");
+
+}
+
+});
+
+},{threshold:0.2});
+
+elements.forEach(el=>{
+
+el.classList.add("animate-text");
+observer.observe(el);
+
+});
+
+}
+
+// ===================
+// COPY REKENING
+// ===================
+
+window.copyRek = function(no){
+
+navigator.clipboard.writeText(no).then(()=>{
+
+const notif = document.getElementById('copyNotif');
+
+notif.style.display = "block";
+
+setTimeout(()=>{
+notif.style.display="none";
+},1500);
+
+});
+
+}
+
 </script>
 
 <div id="copyNotif" style="
