@@ -27,31 +27,42 @@ body {
 }
 
 html{
-display:flex;
-justify-content:center;
+scroll-behavior:smooth;
 }
 
 body{
-max-width:430px;
+margin:0;
+display:flex;
+justify-content:center;
+background:#f5f5f5; /* background luar saat di PC */
+}
+
+#page-wrapper{
 width:100%;
+max-width:430px;
+position:relative;
 }
 
 #bg-fixed{
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
+position:fixed;
+top:0;
+left:0;
+right:0;
+margin:auto;
 
-  background-image: url('Cover.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+width:100%;
+max-width:430px;
+height:100vh;
 
-  z-index: -999;
-  pointer-events: none;
+background-image:url('Cover.png');
+background-size:cover;
+background-position:center center;
+background-repeat:no-repeat;
 
-  transform: translateZ(0);
-  will-change: transform;
+z-index:-999;
+pointer-events:none;
+
+transform:translateZ(0);
 }
 
 /* ============ COVER ============== */
@@ -128,6 +139,15 @@ transform:translateY(0);
 #content { display: none; width: 100%; text-align: center; }
 
 .section { padding: 40px 25px; }
+
+/* BG 1 */
+#bg1{
+min-height:100vh;
+width:100%;
+display:flex;
+align-items:center;
+justify-content:center;
+}
 
 /* BG DOA */
 .doa-bg {
@@ -221,7 +241,7 @@ transform:translateY(0);
 
 /* WEDDING GIFT */
 .wg-section { background-color: #733a30; padding: 30px 0; text-align: center; color: white; }
-.wg-oval { width: 85%; margin: 0 auto; background: white; border-radius: 30px; padding: 4px 30px; border: 4px solid #fff; box-shadow: 0px 6px 20px rgba(0,0,0,0.7); margin-bottom: 30px; color: #733a30; background-image: url('bg5.png'); background-size: cover; background-position: center; }
+.wg-oval { width: 85%; margin: 0 auto; background: white; border-radius: 30px; padding: 4px 30px; border: 4px solid #733a30; box-shadow: 0px 6px 20px rgba(0,0,0,0.7); margin-bottom: 30px; color: #733a30; background-image: url('bg5.png'); background-size: cover; background-position: center; }
 .wg-icon { width: 30px; height: 30px; margin-bottom: 10px; margin-top: 20px; filter: invert(0.3); }
 .wg-title-inside { font-size: 23px; font-weight: 400; margin-bottom: 10px; }
 .wg-inner-oval { background: #f9f9f9; border-radius: 10px / 15px; padding: 5px 15px; border: 2px solid #fff; width: 98%; margin: 0 auto; margin-bottom: 20px; box-shadow: 0 0 15px rgba(255,255,255,0.7); }
@@ -468,6 +488,11 @@ margin:auto;
 <meta name="twitter:image" content="https://lumieraid.github.io/muhlisin-dan-lilik/Tunangan.jpg">
 </head>
 <body>
+
+<div id="page-wrapper">
+
+<!-- semua isi website kamu -->
+  
     <!-- ======= BG PALING BELAKANG === -->
 <div id="bg-fixed"></div>
 <!-- ========== COVER ========== -->
@@ -800,7 +825,7 @@ document.getElementById("seconds").innerText = Math.floor((diff/1000)%60);
 function startAnimation(){
 
 const elements = document.querySelectorAll(
-".bg1-text, .doa-bg p, .doa-bg h3, .judul-mempelai, .nama-mempelai, .mempelai-section h2, .mempelai-section h1, .mempelai-section p, .btn-lokasi, .btn-ig, .garis, .acara-wrapper h1, .acara-wrapper p, .countdown, .acara-box, .acara-title, .acara-tgl, .story-title, .story-subtitle, .story-text, .wg-title-inside, .wg-oval h3, .wg-oval p, .wg-inner-oval, .rsvp-wrapper, .rsvp-wrapper h1, .thanks-text h1, .thanks-text p, .thanks-text h3, .thanks-text p"
+".bg1-text, .doa-bg p, .doa-bg h3, .judul-mempelai, .nama-mempelai, .mempelai-section h2, .mempelai-section h1, .mempelai-section p, .btn-lokasi, .btn-ig, .garis, .acara-wrapper h1, .acara-wrapper p, .countdown, .acara-box, .acara-title, .acara-tgl, .story-title, .story-subtitle, .story-text, .wg-title-inside, .wg-oval, .wg-oval h3, .wg-oval p, .wg-inner-oval, .rsvp-wrapper, .rsvp-wrapper h1, .thanks-text h1, .thanks-text p, .thanks-text h3, .thanks-text p"
 );
 
 const observer = new IntersectionObserver((entries)=>{
@@ -865,6 +890,6 @@ notif.style.display="none";
     display: none;
     z-index: 9999;
 ">Disalin</div>
-
+</div>
 </body>
 </html>
