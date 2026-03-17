@@ -140,7 +140,12 @@ left:0;
 width:100%;
 height:100%;
 object-fit:cover;
-z-index:-1;
+z-index:0;
+}
+
+#cover > *:not(#cover-img){
+position:relative;
+z-index:2;
 }
 
 /* ======== ANIMASI SLIDE-UP =========== */
@@ -536,7 +541,7 @@ margin:auto;
   <!-- ======= BG 1 === -->
 <div id="content">
     <!-- BG1 Before DOA -->
-    <div class="bg1-section" style="position:relative; background-image:url('bg1.png'); background-size:cover; background-position:center; width:100%; height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+    <div class="bg1-section" style="position:relative; background-image:url('bg1.webp'); background-size:cover; background-position:center; width:100%; height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
         <div class="bg1-text" style="color:#733a30; font-family:'Lora', serif; font-size:17px; margin-bottom: 40px;">The Wedding of</div>
         <div class="bg1-text" style="color:#733a30; font-family:'Great Vibes', cursive; font-size:40px; margin-top:10px;">Muhlis</div>
         <div class="bg1-text" style="color:#733a30; font-family:'Great Vibes', cursive; font-size:36px;">&</div>
