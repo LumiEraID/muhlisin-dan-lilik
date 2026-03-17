@@ -15,11 +15,11 @@
 <link rel="preload" as="image" href="bg1.webp" fetchpriority="high">
 <link rel="preload" as="image" href="bg5.png">
 <link rel="preload" as="image" href="Logo.png">
-
+<link rel="preload" as="audio" href="Pernikahan.mp3">
 
 <meta property="og:title" content="The Wedding of Muhlis & Lilik" />
 <meta property="og:description" content="Sabtu, 06 Juni 2026" />
-<meta property="og:image" content="https://lumieraid.github.io/muhlisin-dan-lilik/Tunangan.jpg" />
+<meta property="og:image" content="https://lumieraid.github.io/muhlisin-dan-lilik/Preview.jpg" />
 <meta property="og:url" content="https://lumieraid.github.io/muhlisin-dan-lilik/" />
 <meta property="og:type" content="website" />
 <meta property="og:image:width" content="1200">
@@ -28,7 +28,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Wedding of Deron & Levonka">
 <meta name="twitter:description" content="Sabtu, 06 Juni 2026">
-<meta name="twitter:image" content="https://lumieraid.github.io/muhlisin-dan-lilik/Tunangan.jpg">
+<meta name="twitter:image" content="https://lumieraid.github.io/muhlisin-dan-lilik/Preview.jpg">
 <style>
 body {
 margin:0;
@@ -725,9 +725,11 @@ margin:auto;
         </footer>
 
           <!-- Musik -->
-         <audio id="bgMusic" loop>
-          <source src="Pernikahan.mp3" type="audio/mpeg">
-         </audio>
+         <audio id="bgMusic" loop preload
+         ="auto">
+          <source src="Pernikahan.mp3" type
+          ="audio/mpeg">
+</audio>
 </div>
 
     <!-- Firebase SDK -->
@@ -804,6 +806,10 @@ const cover = document.getElementById("cover");
 const content = document.getElementById("content");
 const music = document.getElementById("bgMusic");
 
+// 🔥 PLAY LANGSUNG (paling penting)
+music.currentTime = 0;
+music.play().catch(()=>{});
+
 cover.style.opacity = "0";
 
 setTimeout(()=>{
@@ -818,8 +824,6 @@ window.scrollTo(0,0);
 },50);
 
 startAnimation();
-
-music.play().catch(()=>{});
 
 },600);
 
