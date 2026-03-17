@@ -11,8 +11,8 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<link rel="preload" as="image" href="Cover.png">
-<link rel="preload" as="image" href="bg1.png">
+<link rel="preload" as="image" href="Cover.webp" fetchpriority="high">
+<link rel="preload" as="image" href="bg1.webp" fetchpriority="high">
 <link rel="preload" as="image" href="bg5.png">
 <link rel="preload" as="image" href="Logo.png">
 
@@ -44,7 +44,6 @@ background:#f5f5f5;/* background luar saat di PC */
 background:linear-gradient(135deg,#f3f3f3,#e8e8e8);
 }
 
-
 html{
 scroll-behavior:smooth;
 }
@@ -67,7 +66,7 @@ width:100%;
 max-width:430px;
 height:100vh;
 
-background-image:url('Cover.png');
+background-image:url('Cover.webp');
 background-size:cover;
 background-position:center center;
 background-repeat:no-repeat;
@@ -78,6 +77,14 @@ pointer-events:none;
 transform:translateZ(0);
 }
 
+/* ==== BG 1 ===== */
+#bg-fixed,
+.bg1-section{
+will-change: transform;
+transform: translateZ(0);
+backface-visibility: hidden;
+}
+
 /* ============ COVER ============== */
 #cover{
     position:fixed;
@@ -85,7 +92,7 @@ transform:translateZ(0);
     width:100%;
     height:100vh;
 
-    background-image:url('Cover.png');
+    background:;transparent;
     background-size:cover;
     background-position:center;
 
@@ -97,7 +104,7 @@ transform:translateZ(0);
 
     color:#733a30;
     z-index:9999;
-
+    overflow: hidden;
     transition:opacity 0.6s ease;
 }
 
@@ -123,6 +130,17 @@ transform:translateZ(0);
     font-size: 15px;
     border-radius: 10px;
     text-decoration: none;
+}
+
+/* ======== COVER IMAGE ========== */
+#cover-img{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-1;
 }
 
 /* ======== ANIMASI SLIDE-UP =========== */
@@ -490,7 +508,8 @@ margin:auto;
 
 </head>
 <body>
-
+<img src="Cover.webp" style="display:none">
+<img src="bg1.webp" style="display:none">
 <div id="page-wrapper">
 
 <!-- semua isi website kamu -->
@@ -499,6 +518,8 @@ margin:auto;
 <div id="bg-fixed"></div>
 <!-- ========== COVER ========== -->
 <div id="cover">
+    <img src="Cover.webp" id="cover-img">
+  
     <div class="zoom wedding-text">The Wedding of</div>
     <div class="zoom name-text" style="animation-delay:0.3s">Muhlis</div>
     <div class="zoom name-text" style="animation-delay:0.6s">&amp;</div>
